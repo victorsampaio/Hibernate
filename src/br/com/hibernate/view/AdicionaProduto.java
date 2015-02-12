@@ -1,8 +1,10 @@
-package br.com.hibernate;
+package br.com.hibernate.view;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
+
+import br.com.hibernate.bean.Produto;
 
 /**
  * @author VictorSampaio
@@ -19,16 +21,15 @@ public class AdicionaProduto {
 		System.out.println("ID do produto Id: " + p.getId());
 		
 		// Nome
-		p.setNome("Nome Prod 3");
+		p.setNome("Produto TICO");
 		System.out.println("ID do produto Name: " + p.getNome());
 		// Descricao
-		p.setDescricao("Descricao Prod 3");
+		p.setDescricao("Descricao TICO");
 		System.out.println("ID do produto Desc: " + p.getDescricao());
 		// Valor
-		p.setPreco(300.30);
+		p.setPreco(555.55);
 		System.out.println("ID do produto Preco: " + p.getPreco());
-		
-		
+				
 		AnnotationConfiguration cfg = new AnnotationConfiguration();
 		cfg.addAnnotatedClass(Produto.class);
 		
@@ -39,6 +40,9 @@ public class AdicionaProduto {
 		session.getTransaction().commit();
 		
 		System.out.println("ID do produto: " + p.getId());
+		System.out.println("Nome do produto: " + p.getNome());
+		System.out.println("Descrição do produto: " + p.getDescricao());
+		System.out.println("Preço do produto: " + p.getPreco());
 		session.close();
 	}
 

@@ -1,4 +1,4 @@
-package br.com.hibernate;
+package br.com.hibernate.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,16 +14,16 @@ import org.hibernate.validator.NotNull;
  *
  */
 @Entity
+@Table
 public class Produto {
-// Hibernate annotations: 
-	//Identity - Mapeado para colunas identity no DB2, MySQL, MSSQL, Sybase, HSQLDM, Infomix. 
-	//Sequence- Mapeado em seqüências no DB2, PostgreSQL, Oracle, SAP DB, irebird (ou generator no Interbase). 
+	// Hibernate annotations: 
+	// Identity - Mapeado para colunas identity no DB2, MySQL, MSSQL, Sybase, HSQLDM, Infomix. 
+	// Sequence- Mapeado em seqüências no DB2, PostgreSQL, Oracle, SAP DB, irebird (ou generator no Interbase). 
 	
-	@Id
-	@GeneratedValue //(strategy = GenerationType.IDENTITY) 
+	@Id @NotNull
+	@GeneratedValue (strategy = GenerationType.IDENTITY) 
 	@Column(name = "id") 
 	private int id; 
-
 
 	@Column(name="nome")
 	private String nome;
@@ -33,6 +33,8 @@ public class Produto {
 	
 	@Column(name="preco")
 	private double preco;
+	
+	
 	
 	//---Getters and Setters---\\
 	public int getId() {
