@@ -24,12 +24,27 @@ public class AdicionaCliente {
 		// p.setId(0);
 		System.out.println("ID do produto Id: " + cliente.getId());
 
-		cliente.setNome(JOptionPane.showInputDialog("Insira o Nome: "));
-		cliente.setCidade(JOptionPane.showInputDialog("Insira a Cidade: "));
-		cliente.setCpf(JOptionPane.showInputDialog("Insira o CPF: "));
-		cliente.setRg(JOptionPane.showInputDialog("Insira o RG: "));
-		cliente.setTelefone(JOptionPane.showInputDialog("Insira o Telefone: "));
+		// Razão Social
+		cliente.setRazaoSocial(JOptionPane.showInputDialog("Razão Social: "));
 		
+		// Fantasia
+		cliente.setFantasia(JOptionPane.showInputDialog("Fantasia: "));
+		//Telefone
+		cliente.setTelefone(JOptionPane.showInputDialog("Telefone: "));
+		//Estado UF
+		cliente.setEstadoUF(JOptionPane.showInputDialog("Estado(UF): "));
+		//Cidade
+		cliente.setCidade(JOptionPane.showInputDialog("Cidade: "));
+		// Endereço
+		cliente.setEndereco(JOptionPane.showInputDialog("Endereço: "));
+		// Numero
+		cliente.setNumero(JOptionPane.showInputDialog("Numero: "));
+		//Pessoa Juridica/Fisica
+		cliente.setPessoaJuridicaFisica(JOptionPane.showInputDialog("Pessoa Juridica(J) - Fisica(F): "));
+		//CPF
+		cliente.setCpf(JOptionPane.showInputDialog("CPF: "));
+		// Registro Geral (RG)
+		cliente.setRg(JOptionPane.showInputDialog("Registro Geral (RG): "));
 		
 		// Annotation Configuration
 		AnnotationConfiguration configuration = new AnnotationConfiguration();
@@ -45,10 +60,17 @@ public class AdicionaCliente {
 		
 		//Results
 		System.out.println("Id Cliente: " + cliente.getId());
-		System.out.println("Nome: " + cliente.getNome());
+		System.out.println("Nome: " + cliente.getRazaoSocial());
+		System.out.println("Fantasia: " + cliente.getFantasia());
+		System.out.println("Telefone: " + cliente.getTelefone());
+		System.out.println("Estado(UF): " + cliente.getEstadoUF());
+		System.out.println("Cidade: " + cliente.getCidade());
+		System.out.println("Endereço: " + cliente.getEndereco());
+		System.out.println("Numero: " + cliente.getNumero());
+		System.out.println("Pessoa Juridica(J) - Fisica(F): " + cliente.getPessoaJuridicaFisica());
 		System.out.println("CPF: " + cliente.getCpf());
 		System.out.println("RG: " + cliente.getRg());
-		System.out.println("Cidade: " + cliente.getCidade());
+		
 		System.out.println("Telefone: " + cliente.getTelefone());
 		session.close();
 		

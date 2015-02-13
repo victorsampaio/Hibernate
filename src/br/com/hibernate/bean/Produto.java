@@ -1,5 +1,9 @@
 package br.com.hibernate.bean;
 
+//Hibernate annotations: 
+// Identity - Mapeado para colunas identity no DB2, MySQL, MSSQL, Sybase, HSQLDM, Infomix. 
+// Sequence- Mapeado em seqüências no DB2, PostgreSQL, Oracle, SAP DB, irebird (ou generator no Interbase).
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,40 +13,57 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.validator.NotNull;
+
 /**
- * @author VictorSampaio
+ * @author VictorSampaio 
+ * 		id - descricao - tipo - codigodebarra, estoqueFisico,
+ *      estoqueSolicitado, estoqueDisponivel, precoDeCompra, precoDeVenda
  *
  */
 @Entity
 @Table
 public class Produto {
-	// Hibernate annotations: 
-	// Identity - Mapeado para colunas identity no DB2, MySQL, MSSQL, Sybase, HSQLDM, Infomix. 
-	// Sequence- Mapeado em seqüências no DB2, PostgreSQL, Oracle, SAP DB, irebird (ou generator no Interbase). 
-	
-	@Id @NotNull
-	@GeneratedValue (strategy = GenerationType.IDENTITY) 
-	@Column(name = "id") 
-	private int id; 
 
-	@Column(name="nome")
+	@Id
+	@NotNull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private int id;
+
+	@Column(name = "nome")
 	private String nome;
-	
-	@Column(name="descricao")
+
+	@Column(name = "descricao")
 	private String descricao;
-	
-	@Column(name="preco")
-	private double preco;
-	
-	
-	
-	//---Getters and Setters---\\
+
+	@Column(name = "tipo")
+	private String tipo;
+
+	@Column(name = "codigoEan")
+	private String codigoEan;
+
+	@Column(name = "estoqueFisico")
+	private int estoqueFisico;
+
+	@Column(name = "estoqueSolicitado")
+	private int estoqueSolicitado;
+
+	@Column(name = "estoqueDisponivel")
+	private int estoqueDisponivel;
+
+	@Column(name = "precoCompra")
+	private double precoCompra;
+
+	@Column(name = "precoVenda")
+	private double precoVenda;
+	// ---Getters and Setters---\\
+
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int i) {
-		this.id = i;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -61,11 +82,62 @@ public class Produto {
 		this.descricao = descricao;
 	}
 
-	public double getPreco() {
-		return preco;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setPreco(double preco) {
-		this.preco = preco;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
+
+	public String getCodigoEan() {
+		return codigoEan;
+	}
+
+	public void setCodigoEan(String codigoEan) {
+		this.codigoEan = codigoEan;
+	}
+
+	public int getEstoquefisico() {
+		return estoqueFisico;
+	}
+
+	public void setEstoquefisico(int estoqueFisico) {
+		this.estoqueFisico = estoqueFisico;
+	}
+
+	public int getEstoqueSolicitado() {
+		return estoqueSolicitado;
+	}
+
+	public void setEstoqueSolicitado(int estoqueSolicitado) {
+		this.estoqueSolicitado = estoqueSolicitado;
+	}
+
+	public int getEstoqueDisponivel() {
+		return estoqueDisponivel;
+	}
+
+	public void setEstoqueDisponivel(int estoqueDisponivel) {
+		this.estoqueDisponivel = estoqueDisponivel;
+	}
+
+	public double getPrecoCompra() {
+		return precoCompra;
+	}
+
+	public void setPrecoCompra(double precoCompra) {
+		this.precoCompra = precoCompra;
+	}
+
+	public double getPrecoVenda() {
+		return precoVenda;
+	}
+
+	public void setPrecoVenda(double precoVenda) {
+		this.precoVenda = precoVenda;
+	}
+
+	
+	
 }
