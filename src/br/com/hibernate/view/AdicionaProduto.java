@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
 import br.com.hibernate.bean.Produto;
+import br.com.hibernate.control.ValidacaoProduto;
 
 /**
  * @author VictorSampaio id - descricao - tipo - codigodebarra, estoqueFisico,
@@ -24,6 +25,7 @@ public class AdicionaProduto {
 
 		// Identificação
 		produto.setNome(JOptionPane.showInputDialog("PRODUTO - Insira Nome: "));
+		ValidacaoProduto.validaNome(produto.getNome());
 		System.out.println("Produto: " + produto.getNome());
 
 		// Descricao
@@ -37,6 +39,7 @@ public class AdicionaProduto {
 		// Codigo de Barra - Codigo EAN
 		produto.setCodigoEan(JOptionPane
 				.showInputDialog("Codigo de Barra(EAN) :"));
+		ValidacaoProduto.validaCodigoEan(produto.getCodigoEan());
 		System.out.println("Codigo de Barra(EAN): " + produto.getCodigoEan());
 
 		// Estoque Fisico
@@ -92,7 +95,7 @@ public class AdicionaProduto {
 		System.out.println("Preço de Venda: " + produto.getPrecoVenda());
 		session.close();
 
-		JOptionPane.showMessageDialog(null, "Psroduto Salvo com Sucesso");
+		JOptionPane.showMessageDialog(null, "Produto Salvo com Sucesso");
 	}
 
 }

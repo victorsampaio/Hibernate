@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.Length;
 import org.hibernate.validator.NotNull;
 
 /**
@@ -31,6 +32,7 @@ public class Produto {
 	private int id;
 
 	@Column(name = "nome")
+	@Length @NotNull
 	private String nome;
 
 	@Column(name = "descricao")
@@ -40,6 +42,7 @@ public class Produto {
 	private String tipo;
 
 	@Column(name = "codigoEan")
+	@NotNull
 	private String codigoEan;
 
 	@Column(name = "estoqueFisico")
