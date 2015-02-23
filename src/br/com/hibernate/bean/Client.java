@@ -25,7 +25,7 @@ import org.hibernate.validator.NotNull;
  */
 @Entity
 @Table
-public class Cliente {
+public class Client {
 
 	// Identify
 	@Id

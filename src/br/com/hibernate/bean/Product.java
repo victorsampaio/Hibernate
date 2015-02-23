@@ -23,7 +23,7 @@ import org.hibernate.validator.NotNull;
  */
 @Entity
 @Table
-public class Produto {
+public class Product {
 
 	@Id
 	@NotNull

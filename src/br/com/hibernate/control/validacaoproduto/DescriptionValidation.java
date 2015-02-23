@@ -7,7 +7,7 @@ package br.com.hibernate.control.validacaoproduto;
  * @author VictorSampaio
  *
  */
-public class ValidacaoDescricao {
+public class DescriptionValidation {
 
 	
 }

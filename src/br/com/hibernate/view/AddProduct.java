@@ -6,26 +6,26 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-import br.com.hibernate.bean.Produto;
-import br.com.hibernate.control.ValidacaoProduto;
+import br.com.hibernate.bean.Product;
+import br.com.hibernate.control.ProductValidation;
 
 /**
  * @author VictorSampaio id - descricao - tipo - codigodebarra, estoqueFisico,
  *         estoqueSolicitado, estoqueDisponivel, precoDeCompra, precoDeVenda
  */
-public class AdicionaProduto {
+public class AddProduct {
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		Produto produto = new Produto();
+		Product produto = new Product();
 		// p.setId(0);
 		System.out.println("ID do produto Id: " + produto.getId());
 
 		// Identificação
 		produto.setNome(JOptionPane.showInputDialog("PRODUTO - Insira Nome: "));
-		ValidacaoProduto.validaNome(produto.getNome());
+		ProductValidation.validaNome(produto.getNome());
 		System.out.println("Produto: " + produto.getNome());
 
 		// Descricao
@@ -39,7 +39,7 @@ public class AdicionaProduto {
 		// Codigo de Barra - Codigo EAN
 		produto.setCodigoEan(JOptionPane
 				.showInputDialog("Codigo de Barra(EAN) :"));
-		ValidacaoProduto.validaCodigoEan(produto.getCodigoEan());
+		ProductValidation.validaCodigoEan(produto.getCodigoEan());
 		System.out.println("Codigo de Barra(EAN): " + produto.getCodigoEan());
 
 		// Estoque Fisico
@@ -71,7 +71,7 @@ public class AdicionaProduto {
 
 		// Annotation Configuration
 		AnnotationConfiguration cfg = new AnnotationConfiguration();
-		cfg.addAnnotatedClass(Produto.class);
+		cfg.addAnnotatedClass(Product.class);
 
 		// Session Factory
 		SessionFactory factory = cfg.buildSessionFactory();

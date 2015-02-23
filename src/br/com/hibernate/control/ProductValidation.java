@@ -7,17 +7,17 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import br.com.hibernate.bean.Produto;
-import br.com.hibernate.control.validacaoproduto.ValidacaoNome;
+import br.com.hibernate.bean.Product;
+import br.com.hibernate.control.validacaoproduto.NameValidation;
 
 /**
  * @author VictorSampaio
  *
  */
-public class ValidacaoProduto {
+public class ProductValidation {
 	
 		public static String validaNome(String nome) {			
-			ValidacaoNome.validacaoNome(nome);
+			NameValidation.validacaoNome(nome);
 			
 			return nome;
 		}

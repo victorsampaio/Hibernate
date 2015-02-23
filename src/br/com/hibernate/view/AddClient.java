@@ -9,18 +9,18 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
-import br.com.hibernate.bean.Cliente;
+import br.com.hibernate.bean.Client;
 
 /**
  * @author VictorSampaio
  *
  */
-public class AdicionaCliente {
+public class AddClient {
 
 	public static void main(String[] args) {
 
 		// Create a New Cliente
-		Cliente cliente = new Cliente();
+		Client cliente = new Client();
 		// p.setId(0);
 		System.out.println("ID do produto Id: " + cliente.getId());
 
@@ -48,7 +48,7 @@ public class AdicionaCliente {
 		
 		// Annotation Configuration
 		AnnotationConfiguration configuration = new AnnotationConfiguration();
-		configuration.addAnnotatedClass(Cliente.class);
+		configuration.addAnnotatedClass(Client.class);
 		
 		// Session - SessionFactory
 		SessionFactory factory = configuration.buildSessionFactory();

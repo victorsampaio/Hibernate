@@ -9,7 +9,7 @@ import br.com.hibernate.control.Venda;
  * @author VictorSampaio
  *
  */
-public class VendaMain {
+public class SaleMain {
 
 	/**
 	 * @param args

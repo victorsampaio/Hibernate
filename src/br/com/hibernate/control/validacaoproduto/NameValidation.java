@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * @author VictorSampaio
  *
  */
-public class ValidacaoNome {
+public class NameValidation {
 	// Nome
 		public static String validacaoNome(String nome) {
 			System.out.println("Nome :" + nome.length());

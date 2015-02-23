@@ -6,13 +6,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
-import br.com.hibernate.bean.Produto;
+import br.com.hibernate.bean.Product;
 
 /**
  * @author VictorSampaio
  *
  */
-public class GeraTabelas {
+public class GenarateTables {
 
 	/**
 	 * @param args
@@ -20,7 +20,7 @@ public class GeraTabelas {
 	public static void main(String[] args) {
 		
 		AnnotationConfiguration cfg = new AnnotationConfiguration();
-		cfg.addAnnotatedClass(Produto.class);
+		cfg.addAnnotatedClass(Product.class);
 		
 		SchemaExport se = new SchemaExport(cfg);
 		se.create(true, true);
